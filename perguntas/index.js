@@ -11,8 +11,17 @@ app.set('view engine', 'ejs');
 
 //Rota padrão para teste redenrizando .ejs
 //Não precisa colocar a extensão .ejs
-app.get("/", function(req, res){
-    res.render("index.ejs");
+//Mandando variaveis para o HTML
+//Usando Parametros não obrigatórios
+app.get("/:nome?/:lang?", function(req, res){
+    var nome = req.params.nome;
+    var lang = req.params.lang;
+    res.render("index",{
+        nome: nome,
+        lang: lang,
+        empresa: "Guia do programador",
+        inscrito: 8000
+    });
 });
 
 
