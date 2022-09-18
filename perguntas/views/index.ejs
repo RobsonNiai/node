@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia perguntas</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <h1>Guia perguntas</h1>
@@ -16,6 +17,23 @@
     <p>Linguagem: <%= lang %></p>
     <p>Empresa: <%= empresa %></p>
     <p>Inscritos: <%= inscrito %></p>
+
+    <!-- Trabalhando com condicionais -->
+    <% if(msg){ %>
+        <h3>Isso é uma mensagem de erro!</h3>
+    <% }else{ %>
+        <h3>Nenhum erro!</h3>
+    <% } %>
+
+    <!-- Estrutura de repetição -->
+    <% produtos.forEach(function(produto){ %>
+        <h3>Nome produto:<%= produto.nome %></h3>
+        <h3>Preço: R$ <%= produto.preco %></h3>
+        <hr>
+    <% }) %>
+
+    <!-- Carregando imagens -->
+    <img src="/img/testeimg.jpg" alt="">
 
 </body>
 </html>
